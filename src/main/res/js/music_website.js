@@ -18,8 +18,9 @@ $(function main() {
     })
 
     function play(url) {
-        player = new Audio(url);
+        player.pause();
         player.load();
+        player = new Audio(url);
         player.play();
         document.getElementById("stateControlBtn").value = "⏸";
     }

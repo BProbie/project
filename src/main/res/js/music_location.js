@@ -1,6 +1,6 @@
 $(function main() {
 
-    let player = "";
+    let player = new Audio();
     let river_flows_in_you = "../res/mp3/river_flows_in_you.mp3";
 
     $("#river_flows_in_you-music_btn").click(function playMusic() {
@@ -18,8 +18,9 @@ $(function main() {
     })
 
     function play(url) {
-        player = new Audio(url);
+        player.pause();
         player.load();
+        player = new Audio(url);
         player.play();
         document.getElementById("stateControlBtn").value = "⏸";
     }
