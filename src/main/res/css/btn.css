@@ -12,6 +12,16 @@
     width: 100%;
     height: 10%;
     border: none;
-    background: var(--listColor);
     font: 15px bold;
+    background: var(--listColor);
+}
+
+#stateControlBtn {
+    position: absolute;
+    width: 5%;
+    height: 100%;
+    left: 47.5%;
+    border: none;
+    font: 15px bold;
+    background: var(--controlColor);
 }

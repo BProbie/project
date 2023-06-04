@@ -21,7 +21,7 @@ $(function main() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].onmouseenter = function btnEnter() {
             this.style.border = "2px solid black";
-            this.style.borderRadius = "5px"
+            this.style.borderRadius = "5px";
         }
         buttons[i].onmouseleave = function btnLeave() {
             this.style.border = "none";
@@ -34,7 +34,7 @@ $(function main() {
                     this.style.border = j/10+"px solid black";
                     if (j === 99) {
                         this.style.border = "2px solid black";
-                        this.style.borderRadius = "0px";
+                        this.style.borderRadius = "5px";
                     }
                 },j/4);
             }
@@ -58,7 +58,7 @@ $(function main() {
                     this.style.border = j/10+"px solid black";
                     if (j === 99) {
                         this.style.border = "2px solid black";
-                        this.style.borderRadius = "0px";
+                        this.style.borderRadius = "5px";
                     }
                 },j/4);
             }
