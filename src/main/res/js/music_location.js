@@ -2,9 +2,13 @@ $(function main() {
 
     let player = new Audio();
     let river_flows_in_you = "../res/mp3/river_flows_in_you.mp3";
+    let xiao_hu_tong = "../res/mp3/小胡同.mp3";
 
-    $("#river_flows_in_you-music_btn").click(function playMusic() {
+    $("#river_flows_in_you").click(function playMusic() {
         play(river_flows_in_you);
+    })
+    $("#xiao_hu_tong").click(function playMusic() {
+        play(xiao_hu_tong);
     })
 
     $("#stateControlBtn").click(function stateChange() {
