@@ -1,0 +1,12 @@
+:root {
+    --colorState: black;
+    --backgroundColor: black;
+    --menuColor: darkslategrey;
+    --testColor: chartreuse;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--backgroundColor);
+}

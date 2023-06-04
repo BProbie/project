@@ -1,0 +1,9 @@
+#skinChange {
+    position: absolute;
+    width: 2.7%;
+    height: 40%;
+    bottom: 30%;
+    left: 0.5%;
+    border: none;
+    background: var(--menuColor);
+}
