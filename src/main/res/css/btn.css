@@ -8,7 +8,7 @@
     background: var(--menuColor);
 }
 
-#musicBtn {
+.musicBtn {
     width: 100%;
     height: 10%;
     border: none;
