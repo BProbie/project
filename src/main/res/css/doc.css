@@ -2,7 +2,9 @@
     --colorState: black;
     --backgroundColor: black;
     --menuColor: darkslategrey;
-    --testColor: chartreuse;
+    --testColor1: chartreuse;
+    --testColor2: green;
+    --testColor3: darkgreen;
 }
 
 body {
