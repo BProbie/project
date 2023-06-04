@@ -1,10 +1,13 @@
 :root {
     --colorState: black;
     --backgroundColor: black;
-    --menuColor: darkslategrey;
-    --testColor1: chartreuse;
+    --menuColor: dimGray;
+    --listColor: gray;
+    --showColor: darkGray;
+    --controlColor: dimGray;
+    --testColor1: red;
     --testColor2: green;
-    --testColor3: darkgreen;
+    --testColor3: blue;
 }
 
 body {

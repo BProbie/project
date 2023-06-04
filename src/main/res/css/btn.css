@@ -7,3 +7,10 @@
     border: none;
     background: var(--menuColor);
 }
+
+#river_flows_in_you-music_btn {
+    width: 100%;
+    height: 10%;
+    border: none;;
+    background: var(--listColor);
+}
