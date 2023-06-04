@@ -8,10 +8,11 @@
     background: var(--menuColor);
 }
 
-#river_flows_in_you-music_btn {
+#musicBtn {
     width: 100%;
     height: 10%;
     border: none;
+    display: block;
     font: 15px bold;
     background: var(--listColor);
 }
