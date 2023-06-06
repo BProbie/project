@@ -1,6 +1,6 @@
 $(function main() {
 
-    let player = new Audio();
+    let player = null;
     let river_flows_in_you = "../res/mp3/river_flows_in_you.mp3";
     let baby_you = "../res/mp3/baby_you.mp3";
     let yu_jian = "../res/mp3/yu_jian.mp3";
@@ -26,8 +26,10 @@ $(function main() {
     })
 
     function play(url) {
-        player.pause();
-        player.load();
+        if (player!==null) {
+            player.pause();
+            player.load();
+        }
         player = new Audio(url);
         player.play();
         document.getElementById("stateControl").value = "⏸";
