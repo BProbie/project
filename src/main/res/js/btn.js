@@ -7,6 +7,8 @@ $(function main() {
             document.documentElement.style.setProperty("--listColor","mediumAquamarine")
             document.documentElement.style.setProperty("--showColor","aquamarine")
             document.documentElement.style.setProperty("--controlColor","lightSeaGreen")
+            document.documentElement.style.setProperty("--textareaColor","darkslategray")
+            document.documentElement.style.setProperty("--fontColor","black")
         } else if (getComputedStyle(document.documentElement).getPropertyValue("--colorState")==="white") {
             document.documentElement.style.setProperty("--colorState","black")
             document.documentElement.style.setProperty("--backgroundColor","black")
@@ -14,6 +16,8 @@ $(function main() {
             document.documentElement.style.setProperty("--listColor","gray")
             document.documentElement.style.setProperty("--showColor","darkGray")
             document.documentElement.style.setProperty("--controlColor","dimGray")
+            document.documentElement.style.setProperty("--textareaColor","darkslategray")
+            document.documentElement.style.setProperty("--fontColor","black")
         }
     })
 

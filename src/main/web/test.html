@@ -7,9 +7,11 @@
     <link rel="stylesheet" type="text/css" href="../res/css/div.css">
     <link rel="stylesheet" type="text/css" href="../res/css/btn.css">
     <link rel="stylesheet" type="text/css" href="../res/css/img.css">
+    <link rel="stylesheet" type="text/css" href="../res/css/textarea.css">
     <script type="text/javascript" src="../res/js/jquery.js"></script>
     <script type="text/javascript" src="../res/js/btn.js"></script>
     <script type="text/javascript" src="../res/js/music_location.js"></script>
+    <script type="text/javascript" src="../res/js/textarea.js"></script>
     <script type="text/javascript" src="../res/js/join.js"></script>
     <title>潮鸟音乐</title>
 </head>
@@ -21,11 +23,11 @@
 
 <div class="main" hidden>
     <div class="menu">
-        <button type="button" value="" id="skinChange">
-            <img src="../res/img/skin.png" id="skinImg">
-        </button>
+        <button type="button" value="" id="skinChange"><img src="../res/img/skin.png" id="skinImg"></button>
+        <textarea placeholder="潮鸟想听..." class="search" id="allSearch"></textarea>
     </div>
     <div class="list">
+        <textarea placeholder="帮鸟找找..." class="search" id="listSearch"></textarea>
         <input type="button" value="river flows in you" class="musicBtn" id="river_flows_in_you">
         <input type="button" value="baby you" class="musicBtn" id="baby_you">
         <input type="button" value="遇见" class="musicBtn" id="yu_jian">

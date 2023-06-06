@@ -1,0 +1,23 @@
+#allSearch {
+    position: absolute;
+    width: 20%;
+    height: 30px;
+    bottom: 20%;
+    left: 40%;
+    font: 20px 新宋体;
+    line-height: 30px;
+    color: var(--fontColor);
+    background: darkslategray;
+    resize: none;
+}
+
+#listSearch {
+    width: 98%;
+    height: 30px;
+    display: block;
+    font: 20px 新宋体;
+    line-height: 30px;
+    color: var(--fontColor);
+    background: darkslategray;
+    resize: none;
+}
