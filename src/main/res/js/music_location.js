@@ -2,22 +2,26 @@ $(function main() {
 
     let player = new Audio();
     let river_flows_in_you = "../res/mp3/river_flows_in_you.mp3";
-    let xiao_hu_tong = "../res/mp3/小胡同.mp3";
+    let baby_you = "../res/mp3/baby_you.mp3";
+    let yu_jian = "../res/mp3/yu_jian.mp3";
 
+    $("#yu_jian").click(function playerMusic() {
+        play(yu_jian);
+    })
+    $("#baby_you").click(function playMusic() {
+        play(baby_you);
+    })
     $("#river_flows_in_you").click(function playMusic() {
         play(river_flows_in_you);
     })
-    $("#xiao_hu_tong").click(function playMusic() {
-        play(xiao_hu_tong);
-    })
 
-    $("#stateControlBtn").click(function stateChange() {
-        if (document.getElementById("stateControlBtn").value === "⏸") {
+    $("#stateControl").click(function stateChange() {
+        if (document.getElementById("stateControl").value === "⏸") {
             player.pause();
-            document.getElementById("stateControlBtn").value = "▶";
-        } else if (document.getElementById("stateControlBtn").value === "▶") {
+            document.getElementById("stateControl").value = "▶";
+        } else if (document.getElementById("stateControl").value === "▶") {
             player.play();
-            document.getElementById("stateControlBtn").value = "⏸";
+            document.getElementById("stateControl").value = "⏸";
         }
     })
 
@@ -26,6 +30,6 @@ $(function main() {
         player.load();
         player = new Audio(url);
         player.play();
-        document.getElementById("stateControlBtn").value = "⏸";
+        document.getElementById("stateControl").value = "⏸";
     }
 })
