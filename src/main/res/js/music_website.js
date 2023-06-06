@@ -1,6 +1,6 @@
 $(function main() {
 
-    let player = "";
+    let player = new Audio();
     let river_flows_in_you = "https://raw.githubusercontent.com/BProbie/project/CNMusic/src/main/res/mp3/river_flows_in_you.mp3"
     let xiao_hu_tong = "https://raw.githubusercontent.com/BProbie/project/CNMusic/src/main/res/mp3/小胡同.mp3"
 
