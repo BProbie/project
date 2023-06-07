@@ -1,6 +1,6 @@
 $(function main() {
     $("#skinChange").click(function changeSkin() {
-        if (getComputedStyle(document.documentElement).getPropertyValue("--colorState")==="black") {
+        if ((getComputedStyle(document.documentElement).getPropertyValue("--colorState").indexOf("black"))!==-1) {
             document.documentElement.style.setProperty("--colorState","white")
             document.documentElement.style.setProperty("--backgroundColor","wheat")
             document.documentElement.style.setProperty("--menuColor","lightSeaGreen")
@@ -9,7 +9,7 @@ $(function main() {
             document.documentElement.style.setProperty("--controlColor","lightSeaGreen")
             document.documentElement.style.setProperty("--textareaColor","darkslategray")
             document.documentElement.style.setProperty("--fontColor","black")
-        } else if (getComputedStyle(document.documentElement).getPropertyValue("--colorState")==="white") {
+        } else if ((getComputedStyle(document.documentElement).getPropertyValue("--colorState").indexOf("white"))!==-1) {
             document.documentElement.style.setProperty("--colorState","black")
             document.documentElement.style.setProperty("--backgroundColor","black")
             document.documentElement.style.setProperty("--menuColor","dimGray")
