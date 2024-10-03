@@ -2,10 +2,15 @@ package com.probie.UI;
 
 import java.awt.*;
 import javax.swing.*;
+import com.probie.Main;
+import java.util.Arrays;
 import java.util.Objects;
+import java.io.IOException;
 import com.probie.Data.Data;
 import com.probie.Data.Properties;
 import com.programe.probie.ProgrameTool.Computer.Windows;
+import com.programe.probie.ProgrameTool.Type.Show;
+import com.programe.probie.ProgrameTool.Website.Website;
 
 public class Use {
 
@@ -23,6 +28,10 @@ public class Use {
     public static JButton toConfig = new JButton("设置");
 
     //TODO Main
+    public static JButton renew = new JButton("检查更新");
+    public static JButton github = new JButton("GitHub");
+    public static JButton website = new JButton("我的网站");
+    public static JButton me = new JButton("关于作者");
 
     //TODO Function
     public static JTextField functionField = new JTextField();
@@ -53,6 +62,10 @@ public class Use {
         frame.add(functionPanel);
         frame.add(commandPanel);
         frame.add(configPanel);
+        mainPanel.add(renew);
+        mainPanel.add(github);
+        mainPanel.add(website);
+        mainPanel.add(me);
         functionPanel.add(functionField);
         functionPanel.add(loadFunction);
         functionPanel.add(saveFunction);
@@ -102,6 +115,47 @@ public class Use {
         });
 
         //TODO Main
+        renew.addActionListener(actionEvent -> {
+            Object[] values = null;
+            try {
+                values = Objects.requireNonNull(Website.getValueList(Data.renewConfig)).toArray();
+                System.out.println(Arrays.toString(values));
+            } catch (Exception exception) {
+                Windows.showInformation("Connection Timed Out!");
+            }
+            if (!Objects.requireNonNull(values)[0].equals(Main.version)) {
+                if (Windows.getInput(Show.Frame).equals("")) {
+                    if (Website.downFile(Data.renewFile,Windows.getHere(),Windows.getFileName(Data.renewFile))) {
+                        Windows.showInformation("Renew Success!");
+                    } else {
+                        Windows.showInformation("Connection Timed Out!");
+                    }
+                }
+            } else {
+                Windows.showInformation("This Is The Latest!");
+            }
+        });
+        github.addActionListener(actionEvent -> {
+            if (java.awt.Desktop.getDesktop().isSupported(java.awt.Desktop.Action.BROWSE)) {
+                try {
+                    Desktop.getDesktop().browse(java.net.URI.create(Data.github));
+                } catch (IOException ioException) {
+                    throw new RuntimeException(ioException);
+                }
+            }
+        });
+        website.addActionListener(actionEvent -> {
+            if (java.awt.Desktop.getDesktop().isSupported(java.awt.Desktop.Action.BROWSE)) {
+                try {
+                    Desktop.getDesktop().browse(java.net.URI.create(Data.website));
+                } catch (IOException ioException) {
+                    throw new RuntimeException(ioException);
+                }
+            }
+        });
+        me.addActionListener(actionEvent -> {
+            Windows.showInformation("Author: "+"BProbie");
+        });
 
         //TODO Function
         loadFunction.addActionListener(actionEvent -> functionText.setText(Windows.readFile(String.valueOf(Windows.getChosenFile(Objects.requireNonNull(Data.getData("load")))))));
@@ -166,7 +220,7 @@ public class Use {
 
         //TODO MenuButton
         toMain.setBounds(0,0,menuPanel.getWidth()/4,menuPanel.getHeight());
-        toMain.setBackground(Color.GRAY);
+        toMain.setBackground(Color.LIGHT_GRAY);
         toFunction.setBounds(menuPanel.getWidth()/4,0,menuPanel.getWidth()/4,menuPanel.getHeight());
         toFunction.setBackground(Color.GRAY);
         toCommand.setBounds(menuPanel.getWidth()/4*2,0,menuPanel.getWidth()/4,menuPanel.getHeight());
@@ -175,6 +229,10 @@ public class Use {
         toConfig.setBackground(Color.GRAY);
 
         //TODO Main
+        renew.setBounds(mainPanel.getWidth()/5,mainPanel.getHeight()/5,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
+        github.setBounds(mainPanel.getWidth()/5*3,mainPanel.getHeight()/5,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
+        website.setBounds(mainPanel.getWidth()/5,mainPanel.getHeight()/5*3,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
+        me.setBounds(mainPanel.getWidth()/5*3,mainPanel.getHeight()/5*3,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
 
         //TODO Function
         functionField.setBounds(0,0,functionPanel.getWidth()/2,functionPanel.getHeight()/8);

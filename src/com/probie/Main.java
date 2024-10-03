@@ -7,8 +7,8 @@ import com.programe.probie.ProgrameTool.Computer.Windows;
 
 public class Main {
 
-    private static final String renewFile = "https://raw.githubusercontent.com/BProbie/project/Musicreater/Tools-9.0.jar";
-    private static final String renewConfig = "https://raw.githubusercontent.com/BProbie/project/Musicreater/Tools.renew";
+    public static String author = "Probie";
+    public static String version = "1.0";
 
     private static boolean isFirst = false;
 
