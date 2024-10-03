@@ -3,14 +3,12 @@ package com.probie.UI;
 import java.awt.*;
 import javax.swing.*;
 import com.probie.Main;
-import java.util.Arrays;
 import java.util.Objects;
 import java.io.IOException;
 import com.probie.Data.Data;
 import com.probie.Data.Properties;
-import com.programe.probie.ProgrameTool.Computer.Windows;
-import com.programe.probie.ProgrameTool.Type.Show;
 import com.programe.probie.ProgrameTool.Website.Website;
+import com.programe.probie.ProgrameTool.Computer.Windows;
 
 public class Use {
 
@@ -28,6 +26,8 @@ public class Use {
     public static JButton toConfig = new JButton("设置");
 
     //TODO Main
+    public static JButton sureRenew = new JButton("立即更新");
+    public static JButton quitRenew = new JButton("取消更新");
     public static JButton renew = new JButton("检查更新");
     public static JButton github = new JButton("GitHub");
     public static JButton website = new JButton("我的网站");
@@ -62,6 +62,8 @@ public class Use {
         frame.add(functionPanel);
         frame.add(commandPanel);
         frame.add(configPanel);
+        frame.add(sureRenew);
+        frame.add(quitRenew);
         mainPanel.add(renew);
         mainPanel.add(github);
         mainPanel.add(website);
@@ -115,22 +117,27 @@ public class Use {
         });
 
         //TODO Main
+        quitRenew.addActionListener(actionEvent -> exitRenew());
+        sureRenew.addActionListener(actionEvent -> {
+            if (Website.downFile(Data.renewFile,Windows.getHere(),Windows.getFileName(Data.renewFile))) {
+                Windows.showInformation("Renew Success!");
+            } else {
+                Windows.showInformation("Connection Timed Out!");
+            }
+            exitRenew();
+        });
         renew.addActionListener(actionEvent -> {
             Object[] values = null;
             try {
                 values = Objects.requireNonNull(Website.getValueList(Data.renewConfig)).toArray();
-                System.out.println(Arrays.toString(values));
             } catch (Exception exception) {
                 Windows.showInformation("Connection Timed Out!");
             }
             if (!Objects.requireNonNull(values)[0].equals(Main.version)) {
-                if (Windows.getInput(Show.Frame).equals("")) {
-                    if (Website.downFile(Data.renewFile,Windows.getHere(),Windows.getFileName(Data.renewFile))) {
-                        Windows.showInformation("Renew Success!");
-                    } else {
-                        Windows.showInformation("Connection Timed Out!");
-                    }
-                }
+                menuPanel.setVisible(false);
+                mainPanel.setVisible(false);
+                sureRenew.setVisible(true);
+                quitRenew.setVisible(true);
             } else {
                 Windows.showInformation("This Is The Latest!");
             }
@@ -229,6 +236,10 @@ public class Use {
         toConfig.setBackground(Color.GRAY);
 
         //TODO Main
+        quitRenew.setBounds(frame.getWidth()/5,frame.getHeight()/5*3,frame.getWidth()/5,frame.getHeight()/5);
+        sureRenew.setBounds(frame.getWidth()/5*3,frame.getHeight()/5*3,frame.getWidth()/5,frame.getHeight()/5);
+        quitRenew.setVisible(false);
+        sureRenew.setVisible(false);
         renew.setBounds(mainPanel.getWidth()/5,mainPanel.getHeight()/5,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
         github.setBounds(mainPanel.getWidth()/5*3,mainPanel.getHeight()/5,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
         website.setBounds(mainPanel.getWidth()/5,mainPanel.getHeight()/5*3,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
@@ -273,5 +284,14 @@ public class Use {
         functionPanel.setVisible(false);
         commandPanel.setVisible(false);
         configPanel.setVisible(false);
+    }
+
+    public static void exitRenew() {
+        initMenu();
+        sureRenew.setVisible(false);
+        quitRenew.setVisible(false);
+        toMain.setBackground(Color.LIGHT_GRAY);
+        menuPanel.setVisible(true);
+        mainPanel.setVisible(true);
     }
 }
