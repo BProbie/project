@@ -93,6 +93,6 @@ public class Spawn {
     }
 
     public static void command(String title,String value) {
-
+        Windows.showInformation("Please Wait For New Version!");
     }
 }

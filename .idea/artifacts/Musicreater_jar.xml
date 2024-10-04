@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact name="Musicreater:jar">
+    <output-path>$PROJECT_DIR$/../../project/.jar/Musicreater</output-path>
+    <root id="root">
+      <element id="archive" name="Musicreater.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="Musicreater" />
+      </element>
+      <element id="library" level="project" name="lib" />
+    </root>
+  </artifact>
+</component>
