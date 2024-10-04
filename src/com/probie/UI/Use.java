@@ -6,6 +6,7 @@ import com.probie.Main;
 import java.util.Objects;
 import java.io.IOException;
 import com.probie.Data.Data;
+import com.probie.Event.Spawn;
 import com.probie.Data.Properties;
 import com.programe.probie.ProgrameTool.Website.Website;
 import com.programe.probie.ProgrameTool.Computer.Windows;
@@ -26,6 +27,8 @@ public class Use {
     public static JButton toConfig = new JButton("设置");
 
     //TODO Main
+    public static JTextPane renewInformation = new JTextPane();
+    public static JScrollPane renewScroll = new JScrollPane();
     public static JButton sureRenew = new JButton("立即更新");
     public static JButton quitRenew = new JButton("取消更新");
     public static JButton renew = new JButton("检查更新");
@@ -39,6 +42,8 @@ public class Use {
     public static JButton saveFunction = new JButton("保存");
     public static JTextArea functionText = new JTextArea();
     public static JScrollPane functionScroll = new JScrollPane();
+    public static JButton[][] functionKey = new JButton[8][3];
+    public static JButton spawnFunction = new JButton("生\n成");
 
     //TODO Command
     public static JTextField commandField = new JTextField();
@@ -46,6 +51,8 @@ public class Use {
     public static JButton saveCommand = new JButton("保存");
     public static JTextArea commandText = new JTextArea();
     public static JScrollPane commandScroll = new JScrollPane();
+    public static JButton[][] commandKey = new JButton[8][3];
+    public static JButton spawnCommand = new JButton("生\n成");
 
     //TODO Config
     public static JTextArea configTextArea = new JTextArea();
@@ -62,6 +69,8 @@ public class Use {
         frame.add(functionPanel);
         frame.add(commandPanel);
         frame.add(configPanel);
+        frame.add(renewInformation);
+        frame.add(renewScroll);
         frame.add(sureRenew);
         frame.add(quitRenew);
         mainPanel.add(renew);
@@ -73,11 +82,13 @@ public class Use {
         functionPanel.add(saveFunction);
         functionPanel.add(functionText);
         functionPanel.add(functionScroll);
+        functionPanel.add(spawnFunction);
         commandPanel.add(commandField);
         commandPanel.add(loadCommand);
         commandPanel.add(saveCommand);
         commandPanel.add(commandText);
         commandPanel.add(commandScroll);
+        commandPanel.add(spawnCommand);
         menuPanel.add(toMain);
         menuPanel.add(toFunction);
         menuPanel.add(toCommand);
@@ -93,6 +104,7 @@ public class Use {
         configScroll.setViewportView(configTextArea);
         functionScroll.setViewportView(functionText);
         commandScroll.setViewportView(commandText);
+        renewScroll.setViewportView(renewInformation);
 
         //TODO ActionEvent
         toMain.addActionListener(actionEvent -> {
@@ -138,6 +150,12 @@ public class Use {
                 mainPanel.setVisible(false);
                 sureRenew.setVisible(true);
                 quitRenew.setVisible(true);
+                String value = "检测到有可更新的内容如下:";
+                for (Object object : values) {
+                    value = value+"\n"+object;
+                }
+                renewInformation.setText(value);
+                renewInformation.setVisible(true);
             } else {
                 Windows.showInformation("This Is The Latest!");
             }
@@ -165,12 +183,51 @@ public class Use {
         });
 
         //TODO Function
-        loadFunction.addActionListener(actionEvent -> functionText.setText(Windows.readFile(String.valueOf(Windows.getChosenFile(Objects.requireNonNull(Data.getData("load")))))));
-        saveFunction.addActionListener(actionEvent -> Windows.writeFile(Data.getData("save")+functionField.getText()+".musicreaterSave",functionText.getText()));
+        loadFunction.addActionListener(actionEvent -> functionText.setText(Windows.readFile(String.valueOf(Windows.getChosenFile(Objects.requireNonNull(Data.getData("loadFunction")))))));
+        saveFunction.addActionListener(actionEvent -> {
+            Windows.writeFile(Data.getData("saveFunction")+functionField.getText()+".musicreater",functionText.getText());
+            if (Objects.requireNonNull(Data.getData("saveFunctionOpen")).equals("true")) {
+                Windows.open(Data.getData("saveFunction"));
+            }
+        });
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 8; j++) {
+                JButton button = new JButton();
+                switch (i) {
+                    case 0: button.setText(j+"↑"); break;
+                    case 1: button.setText(String.valueOf(j)); break;
+                    case 2: button.setText(j+"↓"); break;
+                    default: break;
+                }
+                button.addActionListener(actionEvent -> functionText.setText(functionText.getText()+button.getText()+" "));
+                functionPanel.add(button);
+                functionKey[j][i] = button;
+            }
+        }
+        spawnFunction.addActionListener(actionEvent -> Spawn.function(functionText.getText()));
 
         //TODO Command
-        loadCommand.addActionListener(actionEvent -> commandText.setText(Windows.readFile(String.valueOf(Windows.getChosenFile(Objects.requireNonNull(Data.getData("load")))))));
-        saveCommand.addActionListener(actionEvent -> Windows.writeFile(Data.getData("save")+commandField.getText()+".musicreaterSave",commandText.getText()));
+        loadCommand.addActionListener(actionEvent -> commandText.setText(Windows.readFile(String.valueOf(Windows.getChosenFile(Objects.requireNonNull(Data.getData("loadCommand")))))));
+        saveCommand.addActionListener(actionEvent -> {
+            Windows.writeFile(Data.getData("saveCommand")+commandField.getText()+".musicreater",commandText.getText());
+            if (Objects.requireNonNull(Data.getData("saveCommandOpen")).equals("true")) {
+                Windows.open(Data.getData("saveCommand"));
+            }
+        });
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 8; j++) {
+                JButton button = new JButton();
+                switch (i) {
+                    case 0: button.setText(j+"↑"); break;
+                    case 1: button.setText(String.valueOf(j)); break;
+                    case 2: button.setText(j+"↓"); break;
+                }
+                button.addActionListener(actionEvent -> commandText.setText(commandText.getText()+button.getText()+" "));
+                commandPanel.add(button);
+                commandKey[j][i] = button;
+            }
+        }
+        spawnCommand.addActionListener(actionEvent -> Spawn.command(commandText.getText()));
 
         //TODO Config
         loadConfig.addActionListener(actionEvent -> {
@@ -181,6 +238,18 @@ public class Use {
         saveConfig.addActionListener(actionEvent -> {
             if (Properties.properties.connection()) {
                 Windows.writeFile(Properties.properties.getFilePath(),configTextArea.getText());
+                if (Integer.parseInt(Objects.requireNonNull(Data.getData("width")))<250) {
+                    Properties.properties.addValue(Data.width,"250");
+                    Windows.showInformation("The Min Width Is 250");
+                }
+                if (Integer.parseInt(Objects.requireNonNull(Data.getData("height")))<150) {
+                    Properties.properties.addValue(Data.height,"150");
+                    Windows.showInformation("The Min Height Is 150");
+                }
+                if (Integer.parseInt(Objects.requireNonNull(Data.getData("style")))==0) {
+                    Properties.properties.addValue(Data.style,"3");
+                    Windows.showInformation("The Style Cannot Be 0");
+                }
                 UI.drawUI();
             }
             initMenu();
@@ -208,19 +277,19 @@ public class Use {
         menuPanel.setBackground(Color.GRAY);
         menuPanel.setLayout(null);
         menuPanel.setVisible(true);
-        mainPanel.setBounds(0,frame.getHeight()/10,frame.getWidth(),frame.getHeight()/10*9);
+        mainPanel.setBounds(0,frame.getHeight()/10,frame.getWidth(),frame.getHeight()/10*9-30);
         mainPanel.setBackground(Color.DARK_GRAY);
         mainPanel.setLayout(null);
         mainPanel.setVisible(true);
-        functionPanel.setBounds(0,frame.getHeight()/10,frame.getWidth(),frame.getHeight()/10*9);
+        functionPanel.setBounds(0,frame.getHeight()/10,frame.getWidth(),frame.getHeight()/10*9-30);
         functionPanel.setBackground(Color.DARK_GRAY);
         functionPanel.setLayout(null);
         functionPanel.setVisible(false);
-        commandPanel.setBounds(0,frame.getHeight()/10,frame.getWidth(),frame.getHeight()/10*9);
+        commandPanel.setBounds(0,frame.getHeight()/10,frame.getWidth(),frame.getHeight()/10*9-30);
         commandPanel.setBackground(Color.DARK_GRAY);
         commandPanel.setLayout(null);
         commandPanel.setVisible(false);
-        configPanel.setBounds(0,frame.getHeight()/10,frame.getWidth(),frame.getHeight()/10*9);
+        configPanel.setBounds(0,frame.getHeight()/10,frame.getWidth(),frame.getHeight()/10*9-30);
         configPanel.setBackground(Color.DARK_GRAY);
         configPanel.setLayout(null);
         configPanel.setVisible(false);
@@ -236,8 +305,14 @@ public class Use {
         toConfig.setBackground(Color.GRAY);
 
         //TODO Main
+        renewInformation.setBounds(0,0,frame.getWidth(),frame.getHeight()/2);
+        renewInformation.setFont(new Font("",Font.BOLD,20));
+        renewScroll.setBounds(0,0,frame.getWidth(),frame.getHeight()/2);
         quitRenew.setBounds(frame.getWidth()/5,frame.getHeight()/5*3,frame.getWidth()/5,frame.getHeight()/5);
         sureRenew.setBounds(frame.getWidth()/5*3,frame.getHeight()/5*3,frame.getWidth()/5,frame.getHeight()/5);
+        quitRenew.setBackground(Color.PINK);
+        sureRenew.setBackground(Color.PINK);
+        renewInformation.setVisible(false);
         quitRenew.setVisible(false);
         sureRenew.setVisible(false);
         renew.setBounds(mainPanel.getWidth()/5,mainPanel.getHeight()/5,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
@@ -253,6 +328,12 @@ public class Use {
         functionText.setBounds(0,functionPanel.getHeight()/8,functionPanel.getWidth(),functionPanel.getHeight()/2);
         functionText.setFont(new Font("",Font.BOLD,20));
         functionScroll.setBounds(0,functionPanel.getHeight()/8,functionPanel.getWidth(),functionPanel.getHeight()/2);
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 8; j++) {
+                functionKey[j][i].setBounds(functionPanel.getWidth()/9*j,functionPanel.getHeight()/8*(5+i),functionPanel.getWidth()/9,functionPanel.getHeight()/8);
+            }
+        }
+        spawnFunction.setBounds(functionPanel.getWidth()/9*8,functionPanel.getHeight()/8*5,functionPanel.getWidth()/9,functionPanel.getHeight()/8*3);
 
         //TODO Command
         commandField.setBounds(0,0,commandPanel.getWidth()/2,commandPanel.getHeight()/8);
@@ -262,6 +343,12 @@ public class Use {
         commandText.setBounds(0,commandPanel.getHeight()/8,commandPanel.getWidth(),commandPanel.getHeight()/2);
         commandText.setFont(new Font("",Font.BOLD,20));
         commandScroll.setBounds(0,commandPanel.getHeight()/8,commandPanel.getWidth(),commandPanel.getHeight()/2);
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 8; j++) {
+                commandKey[j][i].setBounds(commandPanel.getWidth()/9*j,commandPanel.getHeight()/8*(5+i),commandPanel.getWidth()/9,commandPanel.getHeight()/8);
+            }
+        }
+        spawnCommand.setBounds(commandPanel.getWidth()/9*8,commandPanel.getHeight()/8*5,commandPanel.getWidth()/9,commandPanel.getHeight()/8*3);
 
         //TODO Config
         configTextArea.setBounds(0,0,configPanel.getWidth()/4*3,configPanel.getHeight());
@@ -288,6 +375,7 @@ public class Use {
 
     public static void exitRenew() {
         initMenu();
+        renewInformation.setVisible(false);
         sureRenew.setVisible(false);
         quitRenew.setVisible(false);
         toMain.setBackground(Color.LIGHT_GRAY);

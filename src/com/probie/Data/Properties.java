@@ -11,14 +11,30 @@ public class Properties {
             properties.addValue(Data.width,"900");
             properties.addValue(Data.height,"600");
             properties.addValue(Data.style,"3");
-            properties.addValue(Data.load,Windows.getHere()+"\\"+"save\\");
-            properties.addValue(Data.save,Windows.getHere()+"\\"+"save\\");
+            properties.addValue(Data.loadFunction,Windows.getHere()+"\\"+"save\\");
+            properties.addValue(Data.loadCommand,Windows.getHere()+"\\"+"save\\");
+            properties.addValue(Data.saveFunction,Windows.getHere()+"\\"+"save\\");
+            properties.addValue(Data.saveFunctionOpen,"true");
+            properties.addValue(Data.saveCommand,Windows.getHere()+"\\"+"save\\");
+            properties.addValue(Data.saveCommandOpen,"true");
+            properties.addValue(Data.spawnFunction,Windows.getHere()+"\\"+"save\\");
+            properties.addValue(Data.spawnFunctionOpen,"true");
+            properties.addValue(Data.spawnCommand,Windows.getHere()+"\\"+"save\\");
+            properties.addValue(Data.spawnCommandOpen,"true");
             properties.addValue(Data.title,Data.getData("title"));
             properties.addValue(Data.width,Data.getData("width"));
             properties.addValue(Data.height,Data.getData("height"));
             properties.addValue(Data.style,Data.getData("style"));
-            properties.addValue(Data.load,Data.getData("load"));
-            properties.addValue(Data.save,Data.getData("save"));
+            properties.addValue(Data.loadFunction,Data.getData("loadFunction"));
+            properties.addValue(Data.loadCommand,Data.getData("loadCommand"));
+            properties.addValue(Data.saveFunction,Data.getData("saveFunction"));
+            properties.addValue(Data.saveFunctionOpen,Data.getData("saveFunctionOpen"));
+            properties.addValue(Data.saveCommand,Data.getData("saveCommand"));
+            properties.addValue(Data.saveCommandOpen,Data.getData("saveCommandOpen"));
+            properties.addValue(Data.spawnFunction,Data.getData("spawnFunction"));
+            properties.addValue(Data.spawnFunctionOpen,Data.getData("spawnFunctionOpen"));
+            properties.addValue(Data.spawnCommand,Data.getData("spawnCommand"));
+            properties.addValue(Data.spawnCommandOpen,Data.getData("spawnCommandOpen"));
         }
     }
 
