@@ -34,7 +34,7 @@ public class Use {
     public static JButton renew = new JButton("检查更新");
     public static JButton github = new JButton("GitHub");
     public static JButton website = new JButton("音乐网站");
-    public static JButton me = new JButton("关于作者");
+    public static JButton mcVersion = new JButton("版本选择");
 
     //TODO Function
     public static JTextField functionField = new JTextField();
@@ -76,7 +76,7 @@ public class Use {
         mainPanel.add(renew);
         mainPanel.add(github);
         mainPanel.add(website);
-        mainPanel.add(me);
+        mainPanel.add(mcVersion);
         functionPanel.add(functionField);
         functionPanel.add(loadFunction);
         functionPanel.add(saveFunction);
@@ -179,8 +179,8 @@ public class Use {
                 }
             }
         });
-        me.addActionListener(actionEvent -> {
-            Windows.showInformation("Author: "+"BProbie");
+        mcVersion.addActionListener(actionEvent -> {
+            Windows.showInformation("McVersion: "+"1.12.2");
         });
 
         //TODO Function
@@ -209,7 +209,7 @@ public class Use {
                 functionKey[j][i] = button;
             }
         }
-        spawnFunction.addActionListener(actionEvent -> Spawn.function(functionText.getText()));
+        spawnFunction.addActionListener(actionEvent -> Spawn.function(functionField.getText(),functionText.getText()));
 
         //TODO Command
         loadCommand.addActionListener(actionEvent -> {
@@ -236,7 +236,7 @@ public class Use {
                 commandKey[j][i] = button;
             }
         }
-        spawnCommand.addActionListener(actionEvent -> Spawn.command(commandText.getText()));
+        spawnCommand.addActionListener(actionEvent -> Spawn.command(commandField.getText(),commandText.getText()));
 
         //TODO Config
         loadConfig.addActionListener(actionEvent -> {
@@ -328,7 +328,7 @@ public class Use {
         renew.setBounds(mainPanel.getWidth()/5,mainPanel.getHeight()/5,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
         github.setBounds(mainPanel.getWidth()/5*3,mainPanel.getHeight()/5,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
         website.setBounds(mainPanel.getWidth()/5,mainPanel.getHeight()/5*3,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
-        me.setBounds(mainPanel.getWidth()/5*3,mainPanel.getHeight()/5*3,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
+        mcVersion.setBounds(mainPanel.getWidth()/5*3,mainPanel.getHeight()/5*3,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
 
         //TODO Functionr
         functionField.setBounds(0,0,functionPanel.getWidth()/2,functionPanel.getHeight()/8);
