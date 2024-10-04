@@ -33,7 +33,7 @@ public class Use {
     public static JButton quitRenew = new JButton("取消更新");
     public static JButton renew = new JButton("检查更新");
     public static JButton github = new JButton("GitHub");
-    public static JButton website = new JButton("我的网站");
+    public static JButton website = new JButton("音乐网站");
     public static JButton me = new JButton("关于作者");
 
     //TODO Function
@@ -146,16 +146,17 @@ public class Use {
                 Windows.showInformation("Connection Timed Out!");
             }
             if (!Objects.requireNonNull(values)[0].equals(Main.version)) {
+                initMenu();
                 menuPanel.setVisible(false);
-                mainPanel.setVisible(false);
                 sureRenew.setVisible(true);
                 quitRenew.setVisible(true);
+                renewInformation.setVisible(true);
+                renewScroll.setVisible(true);
                 String value = "检测到有可更新的内容如下:";
                 for (Object object : values) {
                     value = value+"\n"+object;
                 }
                 renewInformation.setText(value);
-                renewInformation.setVisible(true);
             } else {
                 Windows.showInformation("This Is The Latest!");
             }
@@ -183,7 +184,11 @@ public class Use {
         });
 
         //TODO Function
-        loadFunction.addActionListener(actionEvent -> functionText.setText(Windows.readFile(String.valueOf(Windows.getChosenFile(Objects.requireNonNull(Data.getData("loadFunction")))))));
+        loadFunction.addActionListener(actionEvent -> {
+            String path = String.valueOf(Windows.getChosenFile(Objects.requireNonNull(Data.getData("loadFunction"))));
+            functionText.setText(Windows.readFile(path));
+            functionField.setText(Windows.getFileName(path).split("\\.")[0]);
+        });
         saveFunction.addActionListener(actionEvent -> {
             Windows.writeFile(Data.getData("saveFunction")+functionField.getText()+".musicreater",functionText.getText());
             if (Objects.requireNonNull(Data.getData("saveFunctionOpen")).equals("true")) {
@@ -207,7 +212,11 @@ public class Use {
         spawnFunction.addActionListener(actionEvent -> Spawn.function(functionText.getText()));
 
         //TODO Command
-        loadCommand.addActionListener(actionEvent -> commandText.setText(Windows.readFile(String.valueOf(Windows.getChosenFile(Objects.requireNonNull(Data.getData("loadCommand")))))));
+        loadCommand.addActionListener(actionEvent -> {
+            String path = String.valueOf(Windows.getChosenFile(Objects.requireNonNull(Data.getData("loadCommand"))));
+            commandText.setText(Windows.readFile(path));
+            commandField.setText(Windows.getFileName(path).split("\\.")[0]);
+        });
         saveCommand.addActionListener(actionEvent -> {
             Windows.writeFile(Data.getData("saveCommand")+commandField.getText()+".musicreater",commandText.getText());
             if (Objects.requireNonNull(Data.getData("saveCommandOpen")).equals("true")) {
@@ -313,6 +322,7 @@ public class Use {
         quitRenew.setBackground(Color.PINK);
         sureRenew.setBackground(Color.PINK);
         renewInformation.setVisible(false);
+        renewScroll.setVisible(false);
         quitRenew.setVisible(false);
         sureRenew.setVisible(false);
         renew.setBounds(mainPanel.getWidth()/5,mainPanel.getHeight()/5,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
@@ -320,7 +330,7 @@ public class Use {
         website.setBounds(mainPanel.getWidth()/5,mainPanel.getHeight()/5*3,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
         me.setBounds(mainPanel.getWidth()/5*3,mainPanel.getHeight()/5*3,mainPanel.getWidth()/5,mainPanel.getHeight()/8);
 
-        //TODO Function
+        //TODO Functionr
         functionField.setBounds(0,0,functionPanel.getWidth()/2,functionPanel.getHeight()/8);
         functionField.setFont(new Font("",Font.BOLD,30));
         loadFunction.setBounds(functionPanel.getWidth()/2,0,functionPanel.getWidth()/4,functionPanel.getHeight()/8);
@@ -352,6 +362,7 @@ public class Use {
 
         //TODO Config
         configTextArea.setBounds(0,0,configPanel.getWidth()/4*3,configPanel.getHeight());
+        configTextArea.setFont(new Font("",Font.BOLD,15));
         if (Properties.properties.connection()) {
             configTextArea.setText(Windows.readFile(Properties.properties.getFilePath()));
         }
@@ -376,6 +387,7 @@ public class Use {
     public static void exitRenew() {
         initMenu();
         renewInformation.setVisible(false);
+        renewScroll.setVisible(false);
         sureRenew.setVisible(false);
         quitRenew.setVisible(false);
         toMain.setBackground(Color.LIGHT_GRAY);

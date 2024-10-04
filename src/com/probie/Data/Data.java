@@ -7,7 +7,7 @@ public class Data {
     public static final String renewFile = "https://raw.githubusercontent.com/BProbie/project/refs/heads/Musicreater/Musicreater.exe";
     public static final String renewConfig = "https://raw.githubusercontent.com/BProbie/project/refs/heads/Musicreater/Musicreater.renew";
     public static final String github = "https://github.com/BProbie";
-    public static final String website = "null";
+    public static final String website = "https://www.everyonepiano.cn/home.html#:~:text=Everyone%20P";
 
     public static String title = "窗口标题";
     public static String width = "窗口宽度";

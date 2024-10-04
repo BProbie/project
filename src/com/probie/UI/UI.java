@@ -20,6 +20,7 @@ public class UI {
             frame.setLocation((int)(Screen.getSize().getWidth()/2-frame.getSize().getWidth()/2),(int)(Screen.getSize().getHeight()/2-frame.getSize().getHeight()/2));
             frame.getRootPane().setWindowDecorationStyle(Integer.parseInt(Objects.requireNonNull(Data.getData("style"))));
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setResizable(false);
             frame.setLayout(null);
             Use.drawMenu(frame);
         }
