@@ -7,11 +7,8 @@ import com.programe.probie.ProgrameTool.Computer.Windows;
 
 public class Main {
 
-    public static String workName = "Musicreater";
     public static String author = "Probie";
-    public static String version = "1.0";
-    public static String mcVersion = "1.12.2";
-    public static String javaVersion = "1.8.0";
+    public static String version = "2.0";
 
     private static boolean isFirst = false;
 
