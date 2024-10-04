@@ -6,7 +6,6 @@ import com.programe.probie.ProgrameTool.Computer.Windows;
 
 public class Spawn {
     public static void function(String title,String value) {
-
         String function =
                 "scoreboard players tag @s add "+title+
                 "\nexecute @s ~ ~ ~ scoreboard objectives add "+title+" dummy"+
