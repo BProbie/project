@@ -17,7 +17,7 @@ public class Properties {
             properties.addValue(Data.saveFunctionOpen,"true");
             properties.addValue(Data.saveCommand,Windows.getHere()+"\\"+"save\\");
             properties.addValue(Data.saveCommandOpen,"true");
-            properties.addValue(Data.spawnFunction,Windows.getHere()+"\\"+"save\\");
+            properties.addValue(Data.spawnFunction,Windows.getHere()+"\\"+"save\\music\\");
             properties.addValue(Data.spawnFunctionOpen,"true");
             properties.addValue(Data.spawnCommand,Windows.getHere()+"\\"+"save\\");
             properties.addValue(Data.spawnCommandOpen,"true");
@@ -35,6 +35,8 @@ public class Properties {
             properties.addValue(Data.spawnFunctionOpen,Data.getData("spawnFunctionOpen"));
             properties.addValue(Data.spawnCommand,Data.getData("spawnCommand"));
             properties.addValue(Data.spawnCommandOpen,Data.getData("spawnCommandOpen"));
+            properties.addValue(Data.functionSpeed,Data.getData("functionSpeed"));
+            properties.addValue(Data.commandSpeed,Data.getData("commandSpeed"));
         }
     }
 
