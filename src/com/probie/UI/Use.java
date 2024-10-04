@@ -315,7 +315,7 @@ public class Use {
 
         //TODO Main
         renewInformation.setBounds(0,0,frame.getWidth(),frame.getHeight()/2);
-        renewInformation.setFont(new Font("",Font.BOLD,20));
+        renewInformation.setFont(new Font("",Font.BOLD,14));
         renewScroll.setBounds(0,0,frame.getWidth(),frame.getHeight()/2);
         quitRenew.setBounds(frame.getWidth()/5,frame.getHeight()/5*3,frame.getWidth()/5,frame.getHeight()/5);
         sureRenew.setBounds(frame.getWidth()/5*3,frame.getHeight()/5*3,frame.getWidth()/5,frame.getHeight()/5);
@@ -332,7 +332,7 @@ public class Use {
 
         //TODO Functionr
         functionField.setBounds(0,0,functionPanel.getWidth()/2,functionPanel.getHeight()/8);
-        functionField.setFont(new Font("",Font.BOLD,30));
+        functionField.setFont(new Font("",Font.BOLD,14));
         loadFunction.setBounds(functionPanel.getWidth()/2,0,functionPanel.getWidth()/4,functionPanel.getHeight()/8);
         saveFunction.setBounds(functionPanel.getWidth()/4*3,0,functionPanel.getWidth()/4,functionPanel.getHeight()/8);
         functionText.setBounds(0,functionPanel.getHeight()/8,functionPanel.getWidth(),functionPanel.getHeight()/2);
@@ -347,7 +347,7 @@ public class Use {
 
         //TODO Command
         commandField.setBounds(0,0,commandPanel.getWidth()/2,commandPanel.getHeight()/8);
-        commandField.setFont(new Font("",Font.BOLD,20));
+        commandField.setFont(new Font("",Font.BOLD,14));
         loadCommand.setBounds(commandPanel.getWidth()/2,0,commandPanel.getWidth()/4,commandPanel.getHeight()/8);
         saveCommand.setBounds(commandPanel.getWidth()/4*3,0,commandPanel.getWidth()/4,commandPanel.getHeight()/8);
         commandText.setBounds(0,commandPanel.getHeight()/8,commandPanel.getWidth(),commandPanel.getHeight()/2);
@@ -362,7 +362,7 @@ public class Use {
 
         //TODO Config
         configTextArea.setBounds(0,0,configPanel.getWidth()/4*3,configPanel.getHeight());
-        configTextArea.setFont(new Font("",Font.BOLD,15));
+        configTextArea.setFont(new Font("",Font.BOLD,14));
         if (Properties.properties.connection()) {
             configTextArea.setText(Windows.readFile(Properties.properties.getFilePath()));
         }

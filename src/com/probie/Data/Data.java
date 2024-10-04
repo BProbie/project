@@ -4,7 +4,7 @@ import com.programe.probie.ProgrameTool.Computer.Windows;
 
 public class Data {
 
-    public static final String renewFile = "https://raw.githubusercontent.com/BProbie/project/refs/heads/Musicreater/Musicreater.exe";
+    public static final String renewFile = "https://raw.githubusercontent.com/BProbie/project/refs/heads/Musicreater/Musicreater.rar";
     public static final String renewConfig = "https://raw.githubusercontent.com/BProbie/project/refs/heads/Musicreater/Musicreater.renew";
     public static final String github = "https://github.com/BProbie";
     public static final String website = "https://www.everyonepiano.cn/home.html#:~:text=Everyone%20P";

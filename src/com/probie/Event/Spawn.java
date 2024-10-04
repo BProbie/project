@@ -19,90 +19,90 @@ public class Spawn {
                 case "0":
                     break;
                 case "1↓":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "0.354";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data._DO; break;
                 case "2↓":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "0.397";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data._RE; break;
                 case "3↓":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "0.400";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data._MI; break;
                 case "4↓":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "0.472";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data._FA; break;
                 case "5↓":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "0.530";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data._SO; break;
                 case "6↓":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "0.595";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data._LA; break;
                 case "7↓":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "0.667";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data._SI; break;
 
                 case "1":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "0.707";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.DO; break;
                 case "2":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "0.794";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.RE; break;
                 case "3":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "0.891";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.MI; break;
                 case "4":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "0.944";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.FA; break;
                 case "5":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "1.059";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.SO; break;
                 case "6":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "1.189";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.LA; break;
                 case "7":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "1.335";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.SI; break;
 
                 case "1↑":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "1.414";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.DO_; break;
                 case "2↑":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "1.587";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.RE_; break;
                 case "3↑":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "1.782";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.MI_; break;
                 case "4↑":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "1.888";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.FA_; break;
                 case "5↑":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "2.119";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.SO_; break;
                 case "6↑":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "2.378";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.LA_; break;
                 case "7↑":
-                    function = function + "\nexecute @a[score_" + title + "_min=" + i + ",score_" + title + "=" + i + "] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 " + "2.670";
-                    break;
+                    function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
+                            Data.SI_; break;
             }
         }
         function = function +
                 "\nexecute @a[score_"+title+"_min="+
-                (10+values.length * Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))+
+                (10+values.length*Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))+
                 ",score_"+title+"="+
-                (10+values.length * Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))+
+                (10+values.length*Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))+
                 "] ~ ~ ~ gamerule gameLoopFunction -"+
                 "\nexecute @a[score_"+title+"_min="+
-                (10+values.length * Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))+
+                (10+values.length*Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))+
                 ",score_"+title+"="+
-                (10+values.length * Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))+
+                (10+values.length*Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))+
                 "] ~ ~ ~ scoreboard objectives remove "+title+
                 "\nexecute @a[score_"+title+"_min="+
-                (10 + values.length * Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))+
+                (10+values.length*Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))+
                 ",score_"+title+"="+
-                (10 + values.length * Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))+
+                (10+values.length*Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))+
                 "] ~ ~ ~ scoreboard players tag @s remove "+title;
 
-        Windows.writeFile(Data.getData("spawnFunction") + title + ".mcfunction", function);
+        Windows.writeFile(Data.getData("spawnFunction")+title+".mcfunction",function);
         if (Objects.requireNonNull(Data.getData("spawnFunctionOpen")).equals("true")) {
             Windows.open(Data.getData("spawnFunction"));
         }
