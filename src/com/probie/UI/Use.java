@@ -186,8 +186,10 @@ public class Use {
         //TODO Function
         loadFunction.addActionListener(actionEvent -> {
             String path = String.valueOf(Windows.getChosenFile(Objects.requireNonNull(Data.getData("loadFunction"))));
-            functionText.setText(Windows.readFile(path));
-            functionField.setText(Windows.getFileName(path).split("\\.")[0]);
+            if (!path.equals("null")) {
+                functionText.setText(Windows.readFile(path));
+                functionField.setText(Windows.getFileName(path).split("\\.")[0]);
+            }
         });
         saveFunction.addActionListener(actionEvent -> {
             Windows.writeFile(Data.getData("saveFunction")+functionField.getText()+".musicreater",functionText.getText());
@@ -214,8 +216,10 @@ public class Use {
         //TODO Command
         loadCommand.addActionListener(actionEvent -> {
             String path = String.valueOf(Windows.getChosenFile(Objects.requireNonNull(Data.getData("loadCommand"))));
-            commandText.setText(Windows.readFile(path));
-            commandField.setText(Windows.getFileName(path).split("\\.")[0]);
+            if (!path.equals("null")) {
+                commandText.setText(Windows.readFile(path));
+                commandField.setText(Windows.getFileName(path).split("\\.")[0]);
+            }
         });
         saveCommand.addActionListener(actionEvent -> {
             Windows.writeFile(Data.getData("saveCommand")+commandField.getText()+".musicreater",commandText.getText());

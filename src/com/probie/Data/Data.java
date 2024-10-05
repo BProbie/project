@@ -4,7 +4,7 @@ import com.programe.probie.ProgrameTool.Computer.Windows;
 
 public class Data {
 
-    public static final String renewFile = "https://raw.githubusercontent.com/BProbie/project/refs/heads/Musicreater/Musicreater.rar";
+    public static final String renewFile = "https://raw.githubusercontent.com/BProbie/project/refs/heads/Musicreater/Musicreater.exe";
     public static final String renewConfig = "https://raw.githubusercontent.com/BProbie/project/refs/heads/Musicreater/Musicreater.renew";
     public static final String github = "https://github.com/BProbie";
     public static final String website = "https://www.everyonepiano.cn/home.html#:~:text=Everyone%20P";
@@ -33,22 +33,22 @@ public class Data {
     public static final String LA_ = "2.378";
     public static final String SI_ = "2.670";
 
-    public static String title = "窗口标题";
-    public static String width = "窗口宽度";
-    public static String height = "窗口高度";
-    public static String style = "样式代码";
-    public static String loadFunction = "导入函数文件的默认打开路径";
-    public static String loadCommand = "导入指令文件的默认打开路径";
-    public static String saveFunction = "保存函数文件的默认打开路径";
-    public static String saveFunctionOpen = "保存函数文件后是否自动打开文件夹";
-    public static String saveCommand = "保存指令文件的默认打开路径";
-    public static String saveCommandOpen = "保存指令文件后是否自动打开文件夹";
-    public static String spawnFunction = "生成函数文件的默认存放路径";
-    public static String spawnFunctionOpen = "生成函数文件后是否自动打开文件夹";
-    public static String spawnCommand = "生成指令文件的默认存放路径";
-    public static String spawnCommandOpen = "生成指令文件后是否自动打开文件夹";
-    public static String functionSpeed = "函数音乐相对播放速度(越小越快)";
-    public static String commandSpeed = "指令音乐相对播放速度(越小越快)";
+    public static String title = "Frame-Title";
+    public static String width = "Frame-Width";
+    public static String height = "Frame-Height";
+    public static String style = "Frame-Style";
+    public static String loadFunction = "Path-LoadFunction";
+    public static String loadCommand = "Path-LoadCommand";
+    public static String saveFunction = "Path-SaveFunction";
+    public static String saveFunctionOpen = "IsOpen-SaveFunction";
+    public static String saveCommand = "Path-SaveCommand";
+    public static String saveCommandOpen = "IsOpen-SaveCommand";
+    public static String spawnFunction = "Path-SpawnFunction";
+    public static String spawnFunctionOpen = "IsOpen-SpawnFunction";
+    public static String spawnCommand = "Path-SpawnCommand";
+    public static String spawnCommandOpen = "IsOpen-SpawnCommand";
+    public static String functionSpeed = "Speed-Function";
+    public static String commandSpeed = "Speed-Command";
 
     public static String getData(String key) {
         if (Properties.properties.connection()) {

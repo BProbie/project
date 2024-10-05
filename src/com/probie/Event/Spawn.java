@@ -12,10 +12,10 @@ public class Spawn {
                 "\nexecute @s ~ ~ ~ gamerule gameLoopFunction music:"+title+
                 "\ntitle @a actionbar \"\\u00a76\\u00a7l播放音乐 \\u00a7b\\u00a7l>>\\u00a7a\\u00a7l"+title+"\\u00a7b\\u00a7l<<\\u00a7r\""+
                 "\nscoreboard players add @a[tag="+title+"] "+title+" 1";
-        String[] values = value.split(" ");
+        String[] values = value.replaceAll("\n","").split(" ");
         for (int i = 10; i < 10 + values.length * Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))); i += Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed")))) {
             switch (values[((i-10)/Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))]) {
-                case "0":
+                case "0↓":
                     break;
                 case "1↓":
                     function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
@@ -39,6 +39,8 @@ public class Spawn {
                     function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
                             Data._SI; break;
 
+                case "0":
+                    break;
                 case "1":
                     function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
                             Data.DO; break;
@@ -61,6 +63,8 @@ public class Spawn {
                     function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
                             Data.SI; break;
 
+                case "0↑":
+                    break;
                 case "1↑":
                     function=function+"\nexecute @a[score_"+title+"_min="+i+",score_"+title+"="+i+"] ~ ~ ~ playsound minecraft:block.note.harp music @a ~ ~ ~ 9 "+
                             Data.DO_; break;

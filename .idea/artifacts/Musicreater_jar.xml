@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact name="Musicreater:jar">
-    <output-path>$PROJECT_DIR$/../../project/.jar/Musicreater</output-path>
+    <output-path>$PROJECT_DIR$</output-path>
     <root id="root">
       <element id="archive" name="Musicreater.jar">
         <element id="directory" name="META-INF">
