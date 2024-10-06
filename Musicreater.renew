@@ -1,10 +1,11 @@
 1.0
 Name: Musicreater
-Version: 1.0
+Version: 1.1
 JavaVersion: 1.8
 Author: Probie(Vegetable-Bird)
 
 The Difference Of The New:
-1. 无
-2. 无
-3. 无
+1. Have Fixed The Tun-Yin
+2. Have Fixed The Path Problem
+3. Set The Title Information In Function And Command
+4. Add The Music Package EG In The Github Tree Of The Musicreater

@@ -192,7 +192,7 @@ public class Use {
             }
         });
         saveFunction.addActionListener(actionEvent -> {
-            Windows.writeFile(Data.getData("saveFunction")+functionField.getText()+".musicreater",functionText.getText());
+            Windows.writeFile(Data.getData("saveFunction")+"\\"+functionField.getText()+".musicreater",functionText.getText());
             if (Objects.requireNonNull(Data.getData("saveFunctionOpen")).equals("true")) {
                 Windows.open(Data.getData("saveFunction"));
             }
@@ -206,7 +206,13 @@ public class Use {
                     case 2: button.setText(j+"↓"); break;
                     default: break;
                 }
-                button.addActionListener(actionEvent -> functionText.setText(functionText.getText()+button.getText()+" "));
+                if (button.getText().equals("5↑")||button.getText().equals("6↑")||button.getText().equals("7↑")
+                        ||button.getText().equals("0↓")||button.getText().equals("1↓")||button.getText().equals("2↓")
+                        ||button.getText().equals("3↓")||button.getText().equals("4↓")) {
+                    button.setText("");
+                } else {
+                    button.addActionListener(actionEvent -> functionText.setText(functionText.getText()+button.getText()+" "));
+                }
                 functionPanel.add(button);
                 functionKey[j][i] = button;
             }
@@ -222,7 +228,7 @@ public class Use {
             }
         });
         saveCommand.addActionListener(actionEvent -> {
-            Windows.writeFile(Data.getData("saveCommand")+commandField.getText()+".musicreater",commandText.getText());
+            Windows.writeFile(Data.getData("saveCommand")+"\\"+commandField.getText()+".musicreater",commandText.getText());
             if (Objects.requireNonNull(Data.getData("saveCommandOpen")).equals("true")) {
                 Windows.open(Data.getData("saveCommand"));
             }
@@ -235,7 +241,13 @@ public class Use {
                     case 1: button.setText(String.valueOf(j)); break;
                     case 2: button.setText(j+"↓"); break;
                 }
-                button.addActionListener(actionEvent -> commandText.setText(commandText.getText()+button.getText()+" "));
+                if (button.getText().equals("5↑")||button.getText().equals("6↑")||button.getText().equals("7↑")
+                        ||button.getText().equals("0↓")||button.getText().equals("1↓")||button.getText().equals("2↓")
+                        ||button.getText().equals("3↓")||button.getText().equals("4↓")) {
+                    button.setText("");
+                } else {
+                    button.addActionListener(actionEvent -> commandText.setText(commandText.getText()+button.getText()+" "));
+                }
                 commandPanel.add(button);
                 commandKey[j][i] = button;
             }
@@ -337,6 +349,9 @@ public class Use {
         //TODO Functionr
         functionField.setBounds(0,0,functionPanel.getWidth()/2,functionPanel.getHeight()/8);
         functionField.setFont(new Font("",Font.BOLD,30));
+        if (functionField.getText().isEmpty()) {
+            functionField.setText("Title");
+        }
         loadFunction.setBounds(functionPanel.getWidth()/2,0,functionPanel.getWidth()/4,functionPanel.getHeight()/8);
         saveFunction.setBounds(functionPanel.getWidth()/4*3,0,functionPanel.getWidth()/4,functionPanel.getHeight()/8);
         functionText.setBounds(0,functionPanel.getHeight()/8,functionPanel.getWidth(),functionPanel.getHeight()/2);
@@ -352,6 +367,9 @@ public class Use {
         //TODO Command
         commandField.setBounds(0,0,commandPanel.getWidth()/2,commandPanel.getHeight()/8);
         commandField.setFont(new Font("",Font.BOLD,30));
+        if (commandField.getText().isEmpty()) {
+            commandField.setText("Title");
+        }
         loadCommand.setBounds(commandPanel.getWidth()/2,0,commandPanel.getWidth()/4,commandPanel.getHeight()/8);
         saveCommand.setBounds(commandPanel.getWidth()/4*3,0,commandPanel.getWidth()/4,commandPanel.getHeight()/8);
         commandText.setBounds(0,commandPanel.getHeight()/8,commandPanel.getWidth(),commandPanel.getHeight()/2);

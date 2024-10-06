@@ -105,7 +105,7 @@ public class Spawn {
                 (10+values.length*Integer.parseInt(Objects.requireNonNull(Data.getData("functionSpeed"))))+
                 "] ~ ~ ~ scoreboard players tag @s remove "+title;
 
-        Windows.writeFile(Data.getData("spawnFunction")+title+".mcfunction",function);
+        Windows.writeFile(Data.getData("spawnFunction")+"\\"+title+".mcfunction",function);
         if (Objects.requireNonNull(Data.getData("spawnFunctionOpen")).equals("true")) {
             Windows.open(Data.getData("spawnFunction"));
         }
