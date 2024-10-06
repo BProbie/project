@@ -1,6 +1,7 @@
 package com.probie.UI;
 
 import java.awt.*;
+import java.io.File;
 import javax.swing.*;
 import com.probie.Main;
 import java.util.Objects;
@@ -131,8 +132,11 @@ public class Use {
         //TODO Main
         quitRenew.addActionListener(actionEvent -> exitRenew());
         sureRenew.addActionListener(actionEvent -> {
-            if (Website.downFile(Data.renewFile,Windows.getHere(),Windows.getFileName(Data.renewFile))) {
+            int i = 0;
+            while (new File(Windows.getHere()+"\\"+Windows.getFileName(Data.renewFile).replaceAll(".exe","")+"-"+i+".exe").exists()) i++;
+            if (Website.downFile(Data.renewFile,Windows.getHere(),Windows.getFileName(Data.renewFile).replaceAll(".exe","")+"-"+i+".exe")) {
                 Windows.showInformation("Renew Success!");
+                System.gc();
             } else {
                 Windows.showInformation("Connection Timed Out!");
             }

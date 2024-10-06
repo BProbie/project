@@ -26,6 +26,7 @@ public class Main {
         UI.createUI();
         UI.drawUI();
     }
+
     public static void main(String[] args) {
         init();
         UI.frame.setVisible(true);
